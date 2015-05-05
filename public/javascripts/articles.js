@@ -9,10 +9,13 @@ $(document).ready(function(){
   .done(function(response){
     console.log(response);
     for(var i=0; i < response.length; i++){
-      debugger
+      // debugger
       // $(".articles-list").append("<li>" + response[i] )
     }
   })
+  .fail(function(){
+    console.log("Error")
+  });
 
 
 });
