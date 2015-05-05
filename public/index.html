@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/application.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js">
+    </script>
     <script src="javascripts/articles.js"></script>
   </head>
   <body>
@@ -16,6 +18,14 @@
       <h2>Seriously!</h2>
       <div class="articles">
         <ul class="articles-list">
+          <script id="article-template" type="text/x-handlebars-template">
+            {{#each articles}}
+              <li class="article" data-article-id="{{id}}">
+                <h4 class="title">{{title}}</h4>
+                <p class="content">{{content}}</p>
+              </li>
+            {{/each}}
+          </script>
         </ul>
       </div>
     </div>

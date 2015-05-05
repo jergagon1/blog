@@ -8,16 +8,14 @@ $(document).ready(function(){
   })
   .done(function(response){
     console.log(response);
-    for(var i=0; i < response.length; i++){
-      // debugger
-      // todo replace this with handlebars
-      var template = '<li data-article-id="' + response[i].id + '">' + response[i].title + '</li>';
-      $(".articles-list").append(template);
-    }
+    var context = { articles: response };
+    var source = $("#article-template").html();
+    var template = Handlebars.compile(source);
+    var html = template(context);
+    $(".articles-list").append(html);
   })
   .fail(function(){
     console.log("Error")
   });
-
 
 });
