@@ -23,11 +23,13 @@ $(document).ready(function(){
   $(".show-new-article-form").on("click", function(event){
     event.preventDefault();
     console.log("button clicked!");
+    // hide new button
+    $(".show-new-article-form").hide();
+    // show form div
+    $(".new-article").show();
   });
-  // hide new button
-  // show form div
   // event listener for form submit
   // prevent default
-  // 
+
 
 });
