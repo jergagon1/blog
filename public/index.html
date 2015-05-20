@@ -17,6 +17,15 @@
       <h1>The Greatest Blog</h1>
       <h2>Seriously!</h2>
       <div class="articles">
+        <div class="new-article" style="display: none;">
+          <h3>Create a New Article</h3>
+          <form class="new-article-form" action="/articles" method="post">
+            <input type="text" name="article[title]" placeholder="Article title"><br />
+            <textarea name="article[content]" placeholder="Article content"></textarea><br />
+            <input type="submit" value="Create">
+          </form>
+        </div>
+        <button class="show-new-article-form">New Article</button>
         <ul class="articles-list">
           <script id="article-template" type="text/x-handlebars-template">
             {{#each articles}}

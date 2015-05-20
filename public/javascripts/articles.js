@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  console.log("Yo!");
+  console.log("Ready!");
 
   // load articles
   $.ajax({
@@ -17,5 +17,17 @@ $(document).ready(function(){
   .fail(function(){
     console.log("Error")
   });
+
+  // Show new article form
+  // listen for button click
+  $(".show-new-article-form").on("click", function(event){
+    event.preventDefault();
+    console.log("button clicked!");
+  });
+  // hide new button
+  // show form div
+  // event listener for form submit
+  // prevent default
+  // 
 
 });
