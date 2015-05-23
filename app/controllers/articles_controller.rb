@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.all
+    @articles = Article.all.sort.reverse
     render json: @articles
   end
 
@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
+    @article = Article.new(article_params)
     if @article.save
       render json: @article, status: :created 
     else
@@ -18,4 +18,8 @@ class ArticlesController < ApplicationController
     end
   end
   # strong params here...
+  private
+  def article_params
+    params.require(:article).permit(:title, :content)
+  end
 end
